@@ -1,0 +1,54 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset = "UTF-8">
+	<meta name="viewport"
+			content="width=device.width. user-scalable=no, initial-scale=1.0, maximum.scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+<div class="Container">
+	<h1>
+		Gestion de Empleados
+	</h1>
+	
+	<a class = "btn btn-success my-2" th:href="@{/create/form}">Crear empleado</a>
+	<table class = "table table-striped">
+	
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>nombre</th>
+			<th>apellido</th>
+			<th>contacto</th>
+			<th>puesto</th>
+			<th>sueldo</th>
+			
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="empleado : ${Empleados}">
+			<th th:text="${empleado.id}"></th>
+			<th th:text="${empleado.nombre}"></th>
+			<th th:text="${empleado.apellido}"></th>
+			<th th:text="${empleado.contacto}"></th>
+			<th th:text="${empleado.puesto}"></th>
+			<th th:text="${empleado.sueldo}"></th>
+			
+		</tr>
+		</tbody>
+		
+		
+	</table>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
